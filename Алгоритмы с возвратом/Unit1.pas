@@ -94,19 +94,20 @@ procedure TForm1.FindAllPath;
             else
               begin
                 if len < 100 then
-                  begin
+                begin
                     s:= 'путь - '+inttostr(len);
                     mmoRoads.lines.add(s);
                     s:='';
                     for i := 1 to j do
                     s:=s+inttostr(p[i])+' ';
                     mmoRoads.lines.add(s);
-                  end;
+                end;
               end;
 
               //изключаем i из множества городов, к. посетили
             Exclude(visited,k);
-            len:=len-1;
+            len:=len-road;
+            j:=j-1;
           end;
       end;
   end;
